@@ -92,5 +92,6 @@ if __name__ == "__main__":
     prox64_montage.plot(kind='3d', show_names=True)
     plt.show()
 
-    # Save the montage to a file for later use
-    prox64_montage.save('PROX-64-Montage-dig.fif', overwrite=True)
+    # Save the montage to utility folder for future use
+    prox64_montage.save('utility/prox64_montagedig.fif')
+    print("Montage saved as 'utility/prox64_montagedig.fif'.")
