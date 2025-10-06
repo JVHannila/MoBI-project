@@ -47,11 +47,6 @@ def create_prox64_montage():
         'POz': (67, -90), 'Fpz' : (90, 90), 'FCz': (23, 90)
     }
 
-    # The table names the DRL and CMS electrodes "FpCz" and "FCz", respectively.
-    # We will rename them here for clarity in the montage.
-    coords_deg['FpCz_DRL'] = coords_deg.pop('Fpz')
-    coords_deg['FCz_CMS'] = coords_deg.pop('FCz')
-
     # Step 2: Convert from spherical (theta, phi) to Cartesian (x, y, z)
     ch_pos_cartesian = {}
     for ch_name, (theta, phi) in coords_deg.items():
@@ -93,5 +88,5 @@ if __name__ == "__main__":
     plt.show()
 
     # Save the montage to utility folder for future use
-    prox64_montage.save('utility/prox64_montagedig.fif')
-    print("Montage saved as 'utility/prox64_montagedig.fif'.")
+    prox64_montage.save('utility/prox64-montage-dig.fif', overwrite=True)
+    print("Montage saved as 'utility/prox64-montage-dig.fif'.")
